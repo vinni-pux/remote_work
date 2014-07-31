@@ -6,13 +6,15 @@ angular.module('F1FeederApp.controllers', []).
     $scope.driversList = [];
     $scope.searchFilter = function (driver) {
         var re = new RegExp($scope.nameFilter, 'i');
-        return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName);
+        return !$scope.nameFilter || re.test(driver.name);// || re.test(driver.Driver.familyName);
     };
 
     ergastAPIservice.getDrivers().success(function (response) {
         //Digging into the response to get the relevant data
-        $scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+        console.log(response.items);
+        $scope.vacanciesList = response.items;
     });
+    
   }).
 
   /* Driver controller */
@@ -22,7 +24,8 @@ angular.module('F1FeederApp.controllers', []).
     $scope.driver = null;
 
     ergastAPIservice.getDriverDetails($scope.id).success(function (response) {
-        $scope.driver = response.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]; 
+        console.log(response);
+        $scope.driver = response; 
     });
 
     ergastAPIservice.getDriverRaces($scope.id).success(function (response) {

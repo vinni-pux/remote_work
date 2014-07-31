@@ -5,15 +5,17 @@ angular.module('F1FeederApp.services', [])
 
     ergastAPI.getDrivers = function() {
       return $http({
-        method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+        method: 'GET', 
+        withCredentials: false,
+        url: 'https://api.hh.ru/vacancies'
       });
     }
 
     ergastAPI.getDriverDetails = function(id) {
       return $http({
-        method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/drivers/'+ id +'/driverStandings.json?callback=JSON_CALLBACK'
+        method: 'GET', 
+        withCredentials: false,
+        url: 'https://api.hh.ru/vacancies/' + id
       });
     }
 

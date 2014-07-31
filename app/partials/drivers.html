@@ -4,13 +4,14 @@
   <tr><th colspan="4">Drivers Championship Standings</th></tr>
 </thead>
 <tbody>
-  <tr ng-repeat="driver in driversList | filter: searchFilter">
+  <tr ng-repeat="vacancy in vacanciesList | filter: searchFilter">
     <td>{{$index + 1}}</td>
     <td>
-      <img src="img/flags/{{driver.Driver.nationality}}.png" />
-      <a href="#/drivers/{{driver.Driver.driverId}}">
-	  	{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+      <span>{{vacancy.employer.name}}</span>
+      <a href="#/drivers/{{vacancy.id}}">
+	  	{{vacancy.name}}
 	  </a>
+      <span>{{vacancy.created_at | date:'d MMMM'}}</span>
 	</td>
     <td>{{driver.Constructors[0].name}}</td>
     <td>{{driver.points}}</td>
