@@ -10,6 +10,9 @@
     </div>
     <div class="driver-status">
       <h2> {{driver.name }} </h2>  <br/>
+        Posted {{driver.created_at | date:'d MMMM'}}
+        <h3>{{driver.employer.name}}</h3>
+        <div ng-bind-html="driver.description" >{{driver.description}}</div>
       Team: {{driver.Constructors[0].name}}<br/>
       Birth: {{driver.Driver.dateOfBirth}}<br/>
       <a href="{{driver.Driver.url}}" target="_blank">Biography</a>

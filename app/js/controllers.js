@@ -1,4 +1,4 @@
-angular.module('F1FeederApp.controllers', []).
+angular.module('F1FeederApp.controllers', ['ngSanitize']).
 
   /* Drivers controller */
   controller('driversController', function($scope, ergastAPIservice) {
@@ -27,6 +27,7 @@ angular.module('F1FeederApp.controllers', []).
         console.log(response);
         $scope.driver = response; 
     });
+
 
     ergastAPIservice.getDriverRaces($scope.id).success(function (response) {
         $scope.races = response.MRData.RaceTable.Races; 
