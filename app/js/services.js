@@ -3,15 +3,15 @@ angular.module('F1FeederApp.services', [])
 
     var ergastAPI = {};
 
-    ergastAPI.getDrivers = function() {
+    ergastAPI.getVacancies = function() {
       return $http({
         method: 'GET', 
         withCredentials: false,
-        url: 'https://api.hh.ru/vacancies'
+        url: 'https://api.hh.ru/vacancies?schedule=remote'
       });
     }
 
-    ergastAPI.getDriverDetails = function(id) {
+    ergastAPI.getVacancyDetails = function(id) {
       return $http({
         method: 'GET', 
         withCredentials: false,

@@ -1,31 +1,30 @@
 angular.module('F1FeederApp.controllers', ['ngSanitize']).
 
   /* Drivers controller */
-  controller('driversController', function($scope, ergastAPIservice) {
+  controller('vacanciesController', function($scope, ergastAPIservice) {
     $scope.nameFilter = null;
-    $scope.driversList = [];
-    $scope.searchFilter = function (driver) {
+    $scope.vacanciesList = [];
+    $scope.searchFilter = function (vacancy) {
         var re = new RegExp($scope.nameFilter, 'i');
-        return !$scope.nameFilter || re.test(driver.name);// || re.test(driver.Driver.familyName);
+        return !$scope.nameFilter || re.test(vacancy.name);// || re.test(driver.Driver.familyName);
     };
 
-    ergastAPIservice.getDrivers().success(function (response) {
+    ergastAPIservice.getVacancies().success(function (response) {
         //Digging into the response to get the relevant data
-        console.log(response.items);
         $scope.vacanciesList = response.items;
     });
     
   }).
 
   /* Driver controller */
-  controller('driverController', function($scope, $routeParams, ergastAPIservice) {
+  controller('vacancyController', function($scope, $routeParams, ergastAPIservice) {
     $scope.id = $routeParams.id;
     $scope.races = [];
-    $scope.driver = null;
+    $scope.vacancy = null;
 
-    ergastAPIservice.getDriverDetails($scope.id).success(function (response) {
+    ergastAPIservice.getVacancyDetails($scope.id).success(function (response) {
         console.log(response);
-        $scope.driver = response; 
+        $scope.vacancy = response; 
     });
 
 

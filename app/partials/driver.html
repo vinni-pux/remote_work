@@ -1,24 +1,19 @@
 <section id="main">
-  <a href="./#/drivers"><- Back to drivers list</a>
+  <a href="./#/vacancies"><- Back to vacancies list</a>
   <nav id="secondary" class="main-nav">
-    <div class="driver-picture">
-      <div class="avatar">
-        <img ng-show="driver" src="img/drivers/{{driver.Driver.driverId}}.png" />
-        <img ng-show="driver" src="img/flags/{{driver.Driver.nationality}}.png" /><br/>
-        {{driver.Driver.givenName}} {{driver.Driver.familyName}}
-      </div>
+    <div class="logo-picture">
+      <img ng-show="vacancy" src="{{vacancy.employer.logo_urls.240}}" /><br/>
     </div>
     <div class="driver-status">
-      <h2> {{driver.name }} </h2>  <br/>
-        Posted {{driver.created_at | date:'d MMMM'}}
-        <h3>{{driver.employer.name}}</h3>
-        <div ng-bind-html="driver.description" >{{driver.description}}</div>
-      Team: {{driver.Constructors[0].name}}<br/>
-      Birth: {{driver.Driver.dateOfBirth}}<br/>
-      <a href="{{driver.Driver.url}}" target="_blank">Biography</a>
+      <h2> {{vacancy.name }} </h2>  <br/>
+        Posted {{vacancy.created_at | date:'d MMMM'}}
+        <h3>{{vacancy.employer.name}}</h3>
+        <!--<a href="{{driver.Driver.url}}" target="_blank">Biography</a>-->
+        <div ng-bind-html="vacancy.description" >{{vacancy.description}}</div>
+      
     </div>
   </nav>
-
+<!--
   <div class="main-content">
     <table class="result-table">
       <thead>
@@ -38,4 +33,5 @@
       </tbody>
     </table>
   </div>
+  -->
 </section>
