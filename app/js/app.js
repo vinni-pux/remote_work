@@ -5,7 +5,7 @@ angular.module('F1FeederApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-	when("/vacancies", {templateUrl: "partials/drivers.html", controller: "vacanciesController"}).
-	when("/vacancy/:id", {templateUrl: "partials/driver.html", controller: "vacancyController"}).
+	when("/vacancies", {templateUrl: "partials/vacancies.html", controller: "vacanciesController"}).
+	when("/vacancy/:id", {templateUrl: "partials/vacancy.html", controller: "vacancyController"}).
 	otherwise({redirectTo: '/vacancies'});
 }]);
