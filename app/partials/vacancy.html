@@ -9,8 +9,8 @@
         Posted {{vacancy.created_at | date:'d MMMM'}}
         <h3>{{vacancy.employer.name}}</h3>
         <!--<a href="{{driver.Driver.url}}" target="_blank">Biography</a>-->
-        <div ng-bind-html="vacancy.description" >{{vacancy.description}}</div>
-      
+        <div ng-bind-html="vacancy.description" class="col-sm-8">{{vacancy.description}}</div>
+        <div class="col-sm-4">Lorem ipsum</div>
     </div>
   </nav>
 <!--
