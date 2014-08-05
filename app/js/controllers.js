@@ -1,4 +1,4 @@
-angular.module('F1FeederApp.controllers', ['ngSanitize']).
+angular.module('remoteWork.controllers', ['ngSanitize']).
 
   /* Drivers controller */
   controller('vacanciesController', function($scope, ergastAPIservice) {

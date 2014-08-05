@@ -1,6 +1,6 @@
-angular.module('F1FeederApp', [
-  'F1FeederApp.services',
-  'F1FeederApp.controllers',
+angular.module('remoteWork', [
+  'remoteWork.services',
+  'remoteWork.controllers',
   'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
