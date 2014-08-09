@@ -9,11 +9,18 @@ angular.module('remoteWork.controllers', ['ngSanitize']).
         return !$scope.nameFilter || re.test(vacancy.name);// || re.test(driver.Driver.familyName);
     };
 
-    ergastAPIservice.getVacancies().success(function (response) {
+    ergastAPIservice.getVacancies(1).success(function (response) {
         //Digging into the response to get the relevant data
+        console.log(response.items);
         $scope.vacanciesList = response.items;
     });
-    
+    /*
+    ergastAPIservice.getVacancies(2).success(function (response) {
+        //Digging into the response to get the relevant data
+        console.log(response.items);
+        $scope.vacanciesList2 = response.items;
+    });
+    */
   }).
 
   /* Driver controller */
